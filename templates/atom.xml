@@ -1,0 +1,28 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://www.example.org/myfeed</id>
+  <title>{{ title }}</title>
+  <updated>2005-07-15T12:00:00Z</updated>
+  <author>
+    <name>{{ author }}</name>
+  </author>
+  <link href="http://example.org" />
+  <link rel="self" href="http://example.org/myfeed" />
+  {% for entry in entries %}
+  <entry>
+    <id>{{ entry.id }}</id>
+    <title>{{ entry.title }}</title>
+    <updated>{{ entry.updated }}</updated>
+    <link rel="enclosure" 
+          type="{{ entry.link.type }}"
+          title="{{ entry.link.title }}"
+          href="{{ entry.link.href }}"
+          />
+	  
+     <link rel="alternate" 
+          type="{{ entry.link.type }}"
+          title="{{ entry.link.title }}"
+          href="{{ entry.link.href }}"
+          />
+  </entry>
+  {% endfor %}
+</feed>
