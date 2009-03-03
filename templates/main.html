@@ -4,5 +4,19 @@
     </head>
     <body>
 <p>ptools</p>
+<div id="nav">
+    <ul>
+        <li><a href="/create_podcast">create podcast</a></li>
+    </ul>
+</div>
+<div id="podcasts">
+    <table>
+        {% for podcast in podcasts %}
+            <tr>
+                <td><a href="/edit_podcast">{{ podcast.title }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
     </body>
 </html>

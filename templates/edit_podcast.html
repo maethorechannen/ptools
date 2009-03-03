@@ -1,0 +1,38 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+function inputOnBlur() {
+    $(this).replaceWith($(this).val());
+}
+
+ $(document).ready(function() {
+   // do stuff when DOM is ready
+
+   $('.input').bind("blur", inputOnBlur);
+   
+$('button').bind("click", function(){
+//   $.getJSON("/rpc", function(json){
+//          alert("JSON Data: " + json);
+//       });
+        $('tr:last').after('<tr><td><input class="input"></input></td></tr>');
+        $('.input').bind("blur", inputOnBlur);
+
+    });
+});
+
+</script>
+
+</head>
+<body>
+
+<table id="items">
+<tbody>
+<tr><td>row</td></tr>
+<tr><td><input class="input"></input></td></tr>
+</tbody>
+</table>
+<button id="button">button</button>
+</body>
+</html>
